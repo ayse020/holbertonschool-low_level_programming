@@ -1,23 +1,28 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    char letter;
-    
-    /* Kiçik hərflər */
-    for (letter = 'a'; letter <= 'z'; letter++)
-    {
-        putchar(letter);
-    }
-    
-    /* Böyük hərflər */
-    for (letter = 'A'; letter <= 'Z'; letter++)
-    {
-        putchar(letter);
-    }
-    
-    /* Yeni sətir */
-    putchar('\n');
-    
-    return (0);
+	char lowercase = 'a';
+	char uppercase = 'A';
+
+	while (lowercase <= 'z')
+	{
+		putchar(lowercase);
+		lowercase++;
+	}
+
+	while (uppercase <= 'Z')
+	{
+		putchar(uppercase);
+		uppercase++;
+	}
+
+	putchar('\n');
+
+	return (0);
 }
