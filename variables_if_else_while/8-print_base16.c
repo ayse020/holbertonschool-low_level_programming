@@ -1,28 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - Hexadecimal sayıları kiçik hərflərlə çap edir
+ * main - Prints all numbers of base 16 in lowercase
  *
- * Return: Həmişə 0 (Uğurlu)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    char digit;
+	char digit;
 
-    /* 0-9 rəqəmlərini çap et */
-    for (digit = '0'; digit <= '9'; digit++)
-    {
-        putchar(digit);
-    }
+	for (digit = '0'; digit <= '9'; digit++)
+	{
+		putchar(digit);
+	}
 
-    /* a-f hərflərini çap et */
-    for (digit = 'a'; digit <= 'f'; digit++)
-    {
-        putchar(digit);
-    }
+	for (digit = 'a'; digit <= 'f'; digit++)
+	{
+		putchar(digit);
+	}
 
-    /* Yeni sətir əlavə et */
-    putchar('\n');
+	putchar('\n');
 
-    return (0);
+	return (0);
 }
