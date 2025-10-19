@@ -1,26 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - Tək-rəqəmli ədədlərin bütün mümkün birləşmələrini çap edir
+ * main - Prints all possible combinations of single-digit numbers
  *
- * Return: Həmişə 0 (Uğurlu)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int number;
+	int num;
 
-    for (number = 0; number <= 9; number++)
-    {
-        putchar(number + '0');
-        
-        if (number != 9)
-        {
-            putchar(',');
-            putchar(' ');
-        }
-    }
+	for (num = 0; num <= 9; num++)
+	{
+		putchar(num + '0');
+		if (num != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
 
-    putchar('\n');
-
-    return (0);
+	return (0);
 }
