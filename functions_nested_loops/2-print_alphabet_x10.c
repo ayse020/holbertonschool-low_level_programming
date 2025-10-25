@@ -1,7 +1,9 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * print_alphabet_x10 - prints 10 times the alphabet, in lowercase
+ *
+ * Return: void
  */
 void print_alphabet_x10(void)
 {
@@ -12,8 +14,8 @@ void print_alphabet_x10(void)
     {
         for (letter = 'a'; letter <= 'z'; letter++)
         {
-            write(1, &letter, 1);
+            _putchar(letter);
         }
-        write(1, "\n", 1);
+        _putchar('\n');
     }
 }
