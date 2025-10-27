@@ -11,12 +11,12 @@ void jack_bauer(void)
     {
         for (minute = 0; minute < 60; minute++)
         {
-            _putchar((hour / 10) + '0');  /* Saatın onluq rəqəmi */
-            _putchar((hour % 10) + '0');  /* Saatın təklik rəqəmi */
-            _putchar(':');                /* Ayırıcı */
-            _putchar((minute / 10) + '0'); /* Dəqiqənin onluq rəqəmi */
-            _putchar((minute % 10) + '0'); /* Dəqiqənin təklik rəqəmi */
-            _putchar('\n');               /* Yeni sətir */
+            _putchar((hour / 10) + '0');
+            _putchar((hour % 10) + '0');
+            _putchar(':');
+            _putchar((minute / 10) + '0');
+            _putchar((minute % 10) + '0');
+            _putchar('\n');
         }
     }
 }
