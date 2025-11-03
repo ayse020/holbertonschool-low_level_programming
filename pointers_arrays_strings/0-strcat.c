@@ -1,21 +1,23 @@
 #include "main.h"
 
 /**
- * _strcat - İki sətri birləşdirir
- * @dest: Birləşdirilmiş sətirin yazılacağı hədəf
- * @src: Əlavə ediləcək mənbə sətir
+ * _strcat - Concatenates two strings
+ * @dest: The destination string
+ * @src: The source string to append
  *
- * Return: Hədəf sətirin ünvanı (dest)
+ * Return: Pointer to the resulting string dest
  */
 char *_strcat(char *dest, char *src)
 {
     char *original_dest = dest;
 
+    /* Move to the end of dest string */
     while (*dest != '\0')
     {
         dest++;
     }
 
+    /* Copy src to the end of dest */
     while (*src != '\0')
     {
         *dest = *src;
@@ -23,6 +25,7 @@ char *_strcat(char *dest, char *src)
         src++;
     }
 
+    /* Add terminating null byte */
     *dest = '\0';
 
     return (original_dest);
