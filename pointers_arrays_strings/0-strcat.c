@@ -9,24 +9,24 @@
  */
 char *_strcat(char *dest, char *src)
 {
-    char *original_dest = dest;
+	char *original_dest = dest;
 
-    /* Move to the end of dest string */
-    while (*dest != '\0')
-    {
-        dest++;
-    }
+	/* Move to the end of dest string */
+	while (*dest != '\0')
+	{
+		dest++;
+	}
 
-    /* Copy src to the end of dest */
-    while (*src != '\0')
-    {
-        *dest = *src;
-        dest++;
-        src++;
-    }
+	/* Copy src to the end of dest */
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
 
-    /* Add terminating null byte */
-    *dest = '\0';
+	/* Add terminating null byte */
+	*dest = '\0';
 
-    return (original_dest);
+	return (original_dest);
 }
