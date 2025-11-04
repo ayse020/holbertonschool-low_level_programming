@@ -10,19 +10,17 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-    int i;
+	int i;
 
-    /* Copy up to n characters from src to dest */
-    for (i = 0; i < n && src[i] != '\0'; i++)
-    {
-        dest[i] = src[i];
-    }
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
 
-    /* If we copied less than n characters, fill the rest with null bytes */
-    for (; i < n; i++)
-    {
-        dest[i] = '\0';
-    }
+	for (; i < n; i++)
+	{
+		dest[i] = '\0';
+	}
 
-    return (dest);
+	return (dest);
 }
