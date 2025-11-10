@@ -8,14 +8,11 @@
  */
 void _puts_recursion(char *s)
 {
-    /* Base case: end of string */
-    if (*s == '\0')
-    {
-        _putchar('\n');
-        return;
-    }
-    
-    /* Recursive case: print current character and call function with next character */
-    _putchar(*s);
-    _puts_recursion(s + 1);
+	if (*s == '\0')
+	{
+		_putchar('\n');
+		return;
+	}
+	_putchar(*s);
+	_puts_recursion(s + 1);
 }
