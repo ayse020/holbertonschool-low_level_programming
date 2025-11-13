@@ -9,11 +9,11 @@
  */
 int main(int argc, char *argv[])
 {
-    /* Subtract 1 to exclude the program name itself */
-    printf("%d\n", argc - 1);
-    
-    /* Mark argv as unused to avoid compiler warnings */
-    (void)argv;
-    
-    return (0);
+	/* Subtract 1 to exclude the program name itself */
+	printf("%d\n", argc - 1);
+
+	/* Mark argv as unused to avoid compiler warnings */
+	(void)argv;
+
+	return (0);
 }
