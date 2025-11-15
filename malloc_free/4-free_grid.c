@@ -10,18 +10,18 @@
  */
 void free_grid(int **grid, int height)
 {
-    int i;
+	int i;
 
-    /* Check if grid is NULL */
-    if (grid == NULL)
-        return;
+	/* Check if grid is NULL */
+	if (grid == NULL)
+		return;
 
-    /* Free each row (inner arrays) */
-    for (i = 0; i < height; i++)
-    {
-        free(grid[i]);
-    }
+	/* Free each row (inner arrays) */
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
 
-    /* Free the main grid array */
-    free(grid);
+	/* Free the main grid array */
+	free(grid);
 }
