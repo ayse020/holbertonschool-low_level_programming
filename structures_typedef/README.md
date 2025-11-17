@@ -1,15 +1,8 @@
-# Structures Typedef
+# Function Pointers Project
 
-This directory contains solutions for the "Structures Typedef" project in the Holberton School curriculum.
+This project contains C programs that demonstrate the use of function pointers.
 
 ## Files
 
-- `dog.h` - Header file containing the struct dog definition
-
-## Project Description
-
-### 0. Poppy
-Define a new type struct dog with the following elements:
-- name, type = char *
-- age, type = float  
-- owner, type = char *
+- `0-print_name.c` - Function that prints a name using a function pointer
+- `function_pointers.h` - Header file containing function prototypes
