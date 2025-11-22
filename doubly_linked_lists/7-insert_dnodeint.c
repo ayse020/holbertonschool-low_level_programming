@@ -6,48 +6,39 @@
  * @h: Pointer to the head of the list
  * @idx: Index where the new node should be added
  * @n: Value for the new node
- * 
+ *
  * Return: Address of the new node, or NULL if failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-    dlistint_t *new_node, *current;
-    unsigned int i;
+	dlistint_t *new_node, *current;
+	unsigned int i;
 
-    if (h == NULL)
-        return (NULL);
+	if (h == NULL)
+		return (NULL);
 
-    /* idx 0-dırsa, siyahının əvvəlinə əlavə et */
-    if (idx == 0)
-        return (add_dnodeint(h, n));
+	if (idx == 0)
+		return (add_dnodeint(h, n));
 
-    current = *h;
-    
-    /* idx-1 mövqeyinə qədər get */
-    for (i = 0; current != NULL && i < idx - 1; i++)
-        current = current->next;
+	current = *h;
+	for (i = 0; current != NULL && i < idx - 1; i++)
+		current = current->next;
 
-    /* Əgər current NULL-dırsa, indeks etibarlı deyil */
-    if (current == NULL)
-        return (NULL);
+	if (current == NULL)
+		return (NULL);
 
-    /* Əgər siyahının sonundadırsa, sonuna əlavə et */
-    if (current->next == NULL)
-        return (add_dnodeint_end(h, n));
+	if (current->next == NULL)
+		return (add_dnodeint_end(h, n));
 
-    /* Yeni node yarat */
-    new_node = malloc(sizeof(dlistint_t));
-    if (new_node == NULL)
-        return (NULL);
+	new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+		return (NULL);
 
-    new_node->n = n;
+	new_node->n = n;
+	new_node->prev = current;
+	new_node->next = current->next;
+	current->next->prev = new_node;
+	current->next = new_node;
 
-    /* Yeni node-u siyahıya daxil et */
-    new_node->prev = current;
-    new_node->next = current->next;
-    
-    current->next->prev = new_node;
-    current->next = new_node;
-
-    return (new_node);
+	return (new_node);
 }
