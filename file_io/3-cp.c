@@ -12,7 +12,7 @@
  */
 void print_error(int code, char *message, char *arg)
 {
-	dprintf(2, message, arg);
+	fprintf(stderr, message, arg);
 	exit(code);
 }
 
@@ -24,7 +24,7 @@ void close_fd(int fd)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		fprintf(stderr, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -92,7 +92,7 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
