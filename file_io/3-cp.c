@@ -5,14 +5,14 @@
 #include <unistd.h>
 
 /**
- * print_error - prints error message to stderr and exits
+ * print_error - prints error message and exits
  * @code: error code
  * @message: error message
  * @arg: argument for the message
  */
 void print_error(int code, char *message, char *arg)
 {
-	dprintf(2, message, arg);
+	printf(message, arg);
 	exit(code);
 }
 
@@ -24,7 +24,7 @@ void close_fd(int fd)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		printf("Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -92,7 +92,7 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		printf("Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
