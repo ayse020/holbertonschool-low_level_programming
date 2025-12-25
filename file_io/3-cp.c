@@ -7,7 +7,13 @@
 
 #define BUFFER_SIZE 1024
 
-/* Helper funksiyalar */
+/**
+ * handle_error - Handles errors and exits the program
+ * @exit_code: The exit code to use
+ * @msg: The error message to print
+ * @fd1: First file descriptor to close (can be -1)
+ * @fd2: Second file descriptor to close (can be -1)
+ */
 void handle_error(int exit_code, char *msg, int fd1, int fd2)
 {
 	dprintf(STDERR_FILENO, "%s\n", msg);
@@ -18,6 +24,12 @@ void handle_error(int exit_code, char *msg, int fd1, int fd2)
 	exit(exit_code);
 }
 
+/**
+ * open_source_file - Opens the source file for reading
+ * @filename: Name of the source file
+ *
+ * Return: File descriptor on success, -1 on failure
+ */
 int open_source_file(char *filename)
 {
 	int fd = open(filename, O_RDONLY);
@@ -27,6 +39,13 @@ int open_source_file(char *filename)
 	return (fd);
 }
 
+/**
+ * open_dest_file - Opens the destination file for writing
+ * @filename: Name of the destination file
+ * @fd_from: File descriptor of the source file (to close on error)
+ *
+ * Return: File descriptor on success, -1 on failure
+ */
 int open_dest_file(char *filename, int fd_from)
 {
 	int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
